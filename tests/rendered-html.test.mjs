@@ -31,6 +31,8 @@ test("关键课程具有独立可访问页面", async () => {
   assert.match(lesson62, /2007-06-30/);
   assert.match(lesson62, /返回108课目录/);
   assert.match(lesson62, /<title>第62课：分型、笔与线段｜缠论原典<\/title>/);
+  assert.match(lesson62, /https:\/\/blog\.sina\.com\.cn\/chzhshch/);
+  assert.match(lesson62, /查看完整镜像/);
   assert.doesNotMatch(lesson62, /property="og:image"/);
   const lesson108 = await htmlAt("/courses/108");
   assert.match(lesson108, /何谓底部/);
@@ -40,6 +42,7 @@ test("目录与专题页可服务端呈现", async () => {
   const courses = await htmlAt("/courses");
   assert.match(courses, /全部 108 篇/);
   assert.match(courses, /完整目录已经建立/);
+  assert.match(courses, /访问作者原博客/);
   const topics = await htmlAt("/topics");
   assert.match(topics, /多级别与当下/);
 });

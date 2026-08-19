@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "../../components/SiteFooter";
 import { SiteHeader } from "../../components/SiteHeader";
-import { archiveSource, formatLessonNumber, getChapter, getLesson, getLessonTags, lessons } from "../../data/lessons";
+import { archiveMirrorSource, formatLessonNumber, getChapter, getLesson, getLessonTags, lessons, originalBlogSource } from "../../data/lessons";
 
 type PageProps = { params: Promise<{ id: string }> };
 
@@ -56,10 +56,10 @@ export default async function LessonPage({ params }: PageProps) {
             <ol>{chapter.questions.map((question) => <li key={question}>{question}</li>)}</ol>
           </section>
           <aside className="source-card">
-            <span>原文来源</span>
-            <h2>全球第一博客 · 缠中说禅档案</h2>
-            <p>原文、配图及页面中保留的作者回复，请回到资料源核对。本站不会用无出处的转述替代原文。</p>
-            <a href={archiveSource} target="_blank" rel="noreferrer">前往原文档案 ↗</a>
+            <span>出处与存档</span>
+            <h2>原始出处：缠中说禅新浪博客</h2>
+            <p>新浪博客是作者原始发表地址。若原文已被删除、图片缺失或页面无法访问，可再使用完整镜像核对正文与现存资料；镜像不等同于原始出处。</p>
+            <div className="source-links"><a href={originalBlogSource} target="_blank" rel="noreferrer">访问作者原博客 ↗</a><a href={archiveMirrorSource} target="_blank" rel="noreferrer">查看完整镜像 ↗</a></div>
           </aside>
         </div>
 

@@ -12,7 +12,8 @@ export type Chapter = {
   questions: string[];
 };
 
-const source = "https://chzhshch.blog/stocks/wolves/";
+const originalBlog = "https://blog.sina.com.cn/chzhshch";
+const archiveMirror = "https://chzhshch.blog/stocks/wolves/";
 
 export const lessons: Lesson[] = [
   [1, "不会赢钱的经济人，只是废人！", "2006-06-07"],
@@ -170,7 +171,8 @@ export const chapters: Chapter[] = [
   },
 ];
 
-export const archiveSource = source;
+export const originalBlogSource = originalBlog;
+export const archiveMirrorSource = archiveMirror;
 
 export function getLesson(id: number) {
   return lessons.find((lesson) => lesson.id === id);

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
+import { archiveMirrorSource, originalBlogSource } from "../data/lessons";
 
 export const metadata: Metadata = { title: "本站方法｜缠论原典", description: "缠论原典的资料分层、来源核验、争议处理与风险说明。" };
 
@@ -13,4 +14,4 @@ const methods = [
   ["06", "研究不等于荐股", "历史案例用于理解结构，不用于暗示未来收益，更不提供个股买卖承诺。"],
 ];
 
-export default function About(){return <main className="inner-page"><SiteHeader /><section className="page-intro split-intro"><div><p className="eyebrow">Methodology</p><h1>本站方法</h1></div><p>这是一座资料站，也是一套研究约束。目标不是抢着给出答案，而是让每个答案都能回到证据。</p></section><section className="method-grid">{methods.map(([no,title,text])=><article key={no}><span>{no}</span><h2>{title}</h2><p>{text}</p></article>)}</section><section className="about-source"><div><p className="eyebrow">Source policy</p><h2>本站不全文复制其他资料站</h2></div><p>我们保存课程目录、必要的短摘句、出处和本站原创整理；完整原文通过来源链接阅读。这样既保持可核查，也尊重档案维护者的长期劳动。</p></section><aside className="disclaimer"><strong>重要说明</strong><p>本站用于理论研究和资料索引，不提供个股推荐，不承诺收益，不构成证券投资建议。市场具有风险，任何交易决定由使用者自行承担。</p></aside><SiteFooter /></main>}
+export default function About(){return <main className="inner-page"><SiteHeader /><section className="page-intro split-intro"><div><p className="eyebrow">Methodology</p><h1>本站方法</h1></div><p>这是一座资料站，也是一套研究约束。目标不是抢着给出答案，而是让每个答案都能回到证据。</p></section><section className="method-grid">{methods.map(([no,title,text])=><article key={no}><span>{no}</span><h2>{title}</h2><p>{text}</p></article>)}</section><section className="about-source"><div><p className="eyebrow">Source policy</p><h2>原始出处与存档镜像严格分开</h2></div><div><p><a href={originalBlogSource} target="_blank" rel="noreferrer">缠中说禅新浪博客</a>是作者原始发表地址；<a href={archiveMirrorSource} target="_blank" rel="noreferrer">chzhshch.blog</a>是较完整的公开镜像，用于补充新浪已删除文章、缺失图片和失效页面的核对。本站保存目录、必要短摘句与原创整理，不把镜像误标成原始出处。</p></div></section><aside className="disclaimer"><strong>重要说明</strong><p>本站用于理论研究和资料索引，不提供个股推荐，不承诺收益，不构成证券投资建议。市场具有风险，任何交易决定由使用者自行承担。</p></aside><SiteFooter /></main>}
