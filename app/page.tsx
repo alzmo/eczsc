@@ -1,4 +1,4 @@
-import Link from "next/link";
+/* eslint-disable @next/next/no-html-link-for-pages -- native navigation keeps the archive usable without client JavaScript */
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
 import { chapters, lessons } from "./data/lessons";
@@ -14,7 +14,7 @@ export default function Home() {
           <p className="eyebrow">从原文出发 · 让定义可查 · 让规则可证</p>
           <h1>先找到出处，<br />再讨论走势。</h1>
           <p className="lede">以《教你炒股票》108课为主线，把课程、作者回复、更正与本站整理分层呈现。这里不是另造一套缠论，而是为每个概念保留来路。</p>
-          <div className="hero-actions"><Link className="primary" href="/courses">浏览完整108课</Link><Link className="secondary" href="/topics">按概念研读</Link></div>
+          <div className="hero-actions"><a className="primary" href="/courses">浏览完整108课</a><a className="secondary" href="/topics">按概念研读</a></div>
         </div>
         <aside className="principle-card"><span>资料原则 · 01</span><p>原文不是装饰，<br />而是判断的边界。</p><div className="ink-line" /><small>原文、作者回复、正式更正与本站释义，四层分开标记。</small></aside>
       </section>
@@ -25,15 +25,15 @@ export default function Home() {
 
       <section className="topic-section">
         <div className="section-heading"><p className="eyebrow">Reading map</p><h2>从最小结构，走向完整走势</h2><p>课程按发表顺序保存，同时提供专题入口。两条路径互相校验：既不割裂上下文，也不让概念埋没在时间线里。</p></div>
-        <div className="chapter-grid">{chapters.map((chapter, index) => <Link href="/courses" className="chapter-card" key={chapter.id}><span>0{index + 1}</span><small>第 {chapter.range[0]}—{chapter.range[1]} 课</small><h3>{chapter.title}</h3><p>{chapter.description}</p><b>进入研读 →</b></Link>)}</div>
+        <div className="chapter-grid">{chapters.map((chapter, index) => <a href={`/courses?chapter=${chapter.id}`} className="chapter-card" key={chapter.id}><span>0{index + 1}</span><small>第 {chapter.range[0]}—{chapter.range[1]} 课</small><h3>{chapter.title}</h3><p>{chapter.description}</p><b>进入研读 →</b></a>)}</div>
       </section>
 
       <section className="featured-section">
         <div className="section-heading"><p className="eyebrow">Core lessons</p><h2>结构研究的关键课程</h2><p>如果你的目标是理解分型、笔、线段、中枢和多级别联动，可以从这些课程建立骨架，再回到完整时间线。</p></div>
-        <div className="featured-list">{featured.map((lesson) => <Link href={`/courses/${lesson.id}`} key={lesson.id}><span>{String(lesson.id).padStart(3,"0")}</span><strong>{lesson.title}</strong><time>{lesson.date}</time><b>→</b></Link>)}</div>
+        <div className="featured-list">{featured.map((lesson) => <a href={`/courses/${lesson.id}`} key={lesson.id}><span>{String(lesson.id).padStart(3,"0")}</span><strong>{lesson.title}</strong><time>{lesson.date}</time><b>→</b></a>)}</div>
       </section>
 
-      <section className="manifesto"><span>本站立场</span><p>不把解释写成原话，<br />不把争议写成定论，<br />不把历史案例写成收益承诺。</p><Link href="/about">了解本站的整理方法 →</Link></section>
+      <section className="manifesto"><span>本站立场</span><p>不把解释写成原话，<br />不把争议写成定论，<br />不把历史案例写成收益承诺。</p><a href="/about">了解本站的整理方法 →</a></section>
       <SiteFooter />
     </main>
   );

@@ -1,17 +1,16 @@
-import Link from "next/link";
-
+/* eslint-disable @next/next/no-html-link-for-pages -- native navigation keeps the archive usable without client JavaScript */
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <Link href="/" className="brand" aria-label="缠论原典首页">
+      <a href="/" className="brand" aria-label="缠论原典首页">
         <span className="seal">缠</span>
         <span><strong>缠论原典</strong><small>eczsc.com</small></span>
-      </Link>
+      </a>
       <nav aria-label="主导航">
-        <Link href="/courses">108课</Link>
-        <Link href="/topics">专题索引</Link>
-        <Link href="/corrections">更正与版本</Link>
-        <Link href="/about">本站方法</Link>
+        <a href="/courses">108课</a>
+        <a href="/topics">专题索引</a>
+        <a href="/corrections">更正与版本</a>
+        <a href="/about">本站方法</a>
       </nav>
     </header>
   );

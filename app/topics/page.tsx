@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
 import { getLessonTags, lessons } from "../data/lessons";
@@ -16,5 +15,5 @@ const topics = [
 ];
 
 export default function Topics(){
-  return <main className="inner-page"><SiteHeader /><section className="page-intro split-intro"><div><p className="eyebrow">Concept map</p><h1>专题索引</h1></div><p>专题只负责建立连接，不改变课程原始顺序。每个概念都回到相关课程，而不是用一句“口诀”替代上下文。</p></section><section className="topic-index">{topics.map((topic,index)=><article key={topic.name}><header><span>0{index+1}</span><div><h2>{topic.name}</h2><p>{topic.note}</p></div></header><div className="topic-lessons">{topic.ids.map(id=>{const lesson=lessons[id-1]; return <Link href={`/courses/${id}`} key={id}><small>第{id}课</small><strong>{lesson.title}</strong><span>{getLessonTags(lesson).join(" · ")}</span><b>→</b></Link>})}</div></article>)}</section><SiteFooter /></main>
+  return <main className="inner-page"><SiteHeader /><section className="page-intro split-intro"><div><p className="eyebrow">Concept map</p><h1>专题索引</h1></div><p>专题只负责建立连接，不改变课程原始顺序。每个概念都回到相关课程，而不是用一句“口诀”替代上下文。</p></section><section className="topic-index">{topics.map((topic,index)=><article key={topic.name}><header><span>0{index+1}</span><div><h2>{topic.name}</h2><p>{topic.note}</p></div></header><div className="topic-lessons">{topic.ids.map(id=>{const lesson=lessons[id-1]; return <a href={`/courses/${id}`} key={id}><small>第{id}课</small><strong>{lesson.title}</strong><span>{getLessonTags(lesson).join(" · ")}</span><b>→</b></a>})}</div></article>)}</section><SiteFooter /></main>
 }

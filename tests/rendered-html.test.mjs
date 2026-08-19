@@ -43,3 +43,13 @@ test("目录与专题页可服务端呈现", async () => {
   const topics = await htmlAt("/topics");
   assert.match(topics, /多级别与当下/);
 });
+
+test("课程筛选和搜索不依赖浏览器脚本", async () => {
+  const chapter = await htmlAt("/courses?chapter=fractals-segments");
+  assert.match(chapter, /class="active" href="\/courses\?chapter=fractals-segments"/);
+  assert.doesNotMatch(chapter, /不会赢钱的经济人/);
+  const search = await htmlAt("/courses?q=分型");
+  assert.match(search, /分型、笔与线段/);
+  assert.doesNotMatch(search, /没有庄家，有的只是赢家和输家/);
+  assert.match(search, /<form action="\/courses" method="get">/);
+});

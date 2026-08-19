@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- native navigation keeps the archive usable without client JavaScript */
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "../../components/SiteFooter";
 import { SiteHeader } from "../../components/SiteHeader";
@@ -38,7 +38,7 @@ export default async function LessonPage({ params }: PageProps) {
     <main className="inner-page lesson-page">
       <SiteHeader />
       <article className="lesson-article">
-        <Link className="back-link" href="/courses">← 返回108课目录</Link>
+        <a className="back-link" href="/courses">← 返回108课目录</a>
         <header className="lesson-title-block">
           <div className="lesson-index">{formatLessonNumber(lesson.id)}</div>
           <div><p className="eyebrow">教你炒股票 · 第 {lesson.id} 课</p><h1>{lesson.title}</h1><div className="lesson-meta"><time dateTime={lesson.date}>{lesson.date}</time><span>{chapter.title}</span></div></div>
@@ -70,8 +70,8 @@ export default async function LessonPage({ params }: PageProps) {
         </section>
 
         <nav className="lesson-pagination" aria-label="相邻课程">
-          {previous ? <Link href={`/courses/${previous.id}`}><small>上一篇 · {formatLessonNumber(previous.id)}</small><strong>{previous.title}</strong></Link> : <span />}
-          {next ? <Link href={`/courses/${next.id}`}><small>下一篇 · {formatLessonNumber(next.id)}</small><strong>{next.title}</strong></Link> : <span />}
+          {previous ? <a href={`/courses/${previous.id}`}><small>上一篇 · {formatLessonNumber(previous.id)}</small><strong>{previous.title}</strong></a> : <span />}
+          {next ? <a href={`/courses/${next.id}`}><small>下一篇 · {formatLessonNumber(next.id)}</small><strong>{next.title}</strong></a> : <span />}
         </nav>
       </article>
       <SiteFooter />
