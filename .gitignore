@@ -40,6 +40,8 @@ yarn-error.log*
 /outputs/
 /work/
 /site-bundle.tar.gz
+__pycache__/
+*.pyc
 
 # Local Sites project binding; never publish internal project metadata.
 /.openai/hosting.json

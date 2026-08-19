@@ -13,7 +13,17 @@ export type ArchiveRecord = {
   archiveStatus: string;
 };
 
+export type ArchiveCorrection = {
+  title: string;
+  archivedPublicationTime: string;
+  articleCharacterCount: number;
+  articleSha256: string;
+  excerpt: string;
+  archiveStatus: string;
+};
+
 export const archiveRecords = archiveData.records as ArchiveRecord[];
+export const archiveCorrections = archiveData.corrections as ArchiveCorrection[];
 
 export const archiveSummary = {
   lessonCoverage: archiveData.lessonCoverage,

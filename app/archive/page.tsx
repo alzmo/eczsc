@@ -23,7 +23,7 @@ export default function ArchivePage() {
       <section className="archive-stats" aria-label="存档核验统计">
         <article><strong>{archiveSummary.lessonCoverage}</strong><span>课程正文完整覆盖</span></article>
         <article><strong>{archiveSummary.comments.toLocaleString("zh-CN")}</strong><span>存档讨论记录</span></article>
-        <article><strong>{archiveSummary.authorReplies.toLocaleString("zh-CN")}</strong><span>作者署名回复线索</span></article>
+        <article><strong>{archiveSummary.authorReplies.toLocaleString("zh-CN")}</strong><span>双重确认作者回复</span></article>
         <article><strong>{archiveSummary.images}</strong><span>核验后保留的原始图解</span></article>
       </section>
       <section className="archive-method">
@@ -36,9 +36,9 @@ export default function ArchivePage() {
       </section>
       <section className="archive-index">
         <header><p className="eyebrow">Reply leads</p><h2>作者回复线索较多的课程</h2><p>数字只表示当前存档中能够确认作者署名的回复，不推断已经丢失的内容。</p></header>
-        <div>{replyRecords.map((record) => { const lesson = getLesson(record.id); return <a href={`/courses/${record.id}`} key={record.id}><span>第 {record.id} 课</span><strong>{lesson?.title}</strong><small>{record.authorReplyCount} 条署名回复</small></a>; })}</div>
+        <div>{replyRecords.map((record) => { const lesson = getLesson(record.id); return <a href={`/replies?lesson=${record.id}`} key={record.id}><span>第 {record.id} 课</span><strong>{lesson?.title}</strong><small>{record.authorReplyCount} 条确认回复</small></a>; })}</div>
       </section>
-      <aside className="verification-note"><strong>来源说明</strong><p>{archiveSummary.sourceDescription}。存档用于核验，不改变原始出处：作者原始发表地址仍为新浪博客，完整镜像仅作辅助阅读。</p></aside>
+      <aside className="verification-note"><strong>来源说明</strong><p>{archiveSummary.sourceDescription}。存档用于核验，不改变原始出处：作者原始发表地址仍为新浪博客，完整镜像仅作辅助阅读。<a href="/replies">进入作者回复索引 →</a></p></aside>
       <SiteFooter />
     </main>
   );

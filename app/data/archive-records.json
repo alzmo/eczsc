@@ -2,6 +2,16 @@
   "schemaVersion": 1,
   "sourceDescription": "用户提供的公开共享存档合集（已剥离转载站页面外壳）",
   "lessonCoverage": "108/108",
+  "corrections": [
+    {
+      "title": "各位注意，严重更正",
+      "archivedPublicationTime": "2007/9/13 20:55:15",
+      "articleCharacterCount": 1255,
+      "articleSha256": "6e3b8f87eb28c7a3c489c26666708eff937bba44bff9ae649534235716145172",
+      "excerpt": "各位注意 严重更正 今天收盘后事情不断、电话不断，后来又要赶去看一公司，司机按时到，本ID是在赶着把文章写好，连复查一遍都没有，导致今天的划分出现严重错误。以后尽量把写帖子的时间安排充裕点，但有时候实在太忙，出现点错误，也请各位原谅。 错误的划分还在今天的收盘分析中，本ID也不更改，把错误的放在那里，好当一个比较，对学习划分有大的帮助。错误就在于错把绿箭头的那一下当成一段了，这是错误的，中间那一折仔细看一下就知道不构成一笔，而一段是至少三笔的。 因此，按照正确的划分，大盘的走势比错误划分中显示出更强的趋势，也就是93开始的回抽，是一个标准的线段类上涨，连…",
+      "archiveStatus": "正式更正文已核验"
+    }
+  ],
   "records": [
     {
       "id": 1,
@@ -59,7 +69,7 @@
       "articleSha256": "fda873401d3a3fc0a1c0ea87a1fc75930cc81fc8490daeea72d7cc0e2b59229f",
       "articleImageCount": 0,
       "commentCount": 544,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -71,7 +81,7 @@
       "articleSha256": "fa534b9c1a3cea7d12884aecdc842f9706c773900dfc76247ef99217ddd9367a",
       "articleImageCount": 0,
       "commentCount": 448,
-      "authorReplyCount": 4,
+      "authorReplyCount": 3,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -83,7 +93,7 @@
       "articleSha256": "3480fa22c058b208f72a89dbb0ced5a2935b9fa5d23f10586780c9448a57b2e6",
       "articleImageCount": 0,
       "commentCount": 636,
-      "authorReplyCount": 7,
+      "authorReplyCount": 6,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -95,7 +105,7 @@
       "articleSha256": "f96f06127fc0f113117e256e1633ad9f09e6877349ed97a9064c7003407dd273",
       "articleImageCount": 0,
       "commentCount": 537,
-      "authorReplyCount": 15,
+      "authorReplyCount": 14,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -107,7 +117,7 @@
       "articleSha256": "590e1a5288d3a850e8db55f1bc9bc5a88cef1a7636691652ceaa0b568170beac",
       "articleImageCount": 0,
       "commentCount": 580,
-      "authorReplyCount": 39,
+      "authorReplyCount": 38,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -119,7 +129,7 @@
       "articleSha256": "fe9b368c08bad9972c6f7ab1931ce6426e738794c57995a7148ce69008913a86",
       "articleImageCount": 0,
       "commentCount": 608,
-      "authorReplyCount": 42,
+      "authorReplyCount": 41,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -143,7 +153,7 @@
       "articleSha256": "911bc336796e0888efd019e5dd00c8c096a80873860809780d706042cc303df4",
       "articleImageCount": 0,
       "commentCount": 658,
-      "authorReplyCount": 16,
+      "authorReplyCount": 15,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -155,7 +165,7 @@
       "articleSha256": "b8d9d0341b808b4ba85e4729d6e021588a1f075d6130f60f6cad0d0a11e064ca",
       "articleImageCount": 0,
       "commentCount": 481,
-      "authorReplyCount": 29,
+      "authorReplyCount": 28,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -167,7 +177,7 @@
       "articleSha256": "02f256f3be5f06b8756efc1a59a1a620575773ad45ac1227bba5016fedc17298",
       "articleImageCount": 0,
       "commentCount": 587,
-      "authorReplyCount": 24,
+      "authorReplyCount": 23,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -179,7 +189,7 @@
       "articleSha256": "3db134159e6938721e1e70d887993e1c86ac6a421a62c7f6428bdb988ffcbdb3",
       "articleImageCount": 0,
       "commentCount": 695,
-      "authorReplyCount": 20,
+      "authorReplyCount": 19,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -191,7 +201,7 @@
       "articleSha256": "4bbfa51858c1308c688911d376eb5416c02df5d882f00a5762c04137a11ef8cb",
       "articleImageCount": 0,
       "commentCount": 778,
-      "authorReplyCount": 35,
+      "authorReplyCount": 34,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -203,7 +213,7 @@
       "articleSha256": "86fcb2255ce99016b76a137ab4a5faf3a719ae83ee5065497aa3f985f0911c06",
       "articleImageCount": 0,
       "commentCount": 1097,
-      "authorReplyCount": 29,
+      "authorReplyCount": 28,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -215,7 +225,7 @@
       "articleSha256": "4a8adda5e09c8bd5767d6cd57e0f4d2caf3f17f2a051857437ea052975580fb7",
       "articleImageCount": 0,
       "commentCount": 670,
-      "authorReplyCount": 4,
+      "authorReplyCount": 3,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -227,7 +237,7 @@
       "articleSha256": "8ebfb79770814e626f20851d09565b4184bc1604fcc04d051ffb4358526d15a7",
       "articleImageCount": 0,
       "commentCount": 569,
-      "authorReplyCount": 16,
+      "authorReplyCount": 15,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -239,7 +249,7 @@
       "articleSha256": "99341a0ad16d511795663458d328aa67d36c8edd14fd1058eaa6f47dff5acf6a",
       "articleImageCount": 0,
       "commentCount": 631,
-      "authorReplyCount": 16,
+      "authorReplyCount": 15,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -251,7 +261,7 @@
       "articleSha256": "9e5286b861cbbeceeeab6cf311458d95884e06813787002b59e75b96349d3ee8",
       "articleImageCount": 0,
       "commentCount": 679,
-      "authorReplyCount": 12,
+      "authorReplyCount": 11,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -263,7 +273,7 @@
       "articleSha256": "e689823a487db8165cc60adaaa6f480238f7d289e5571799526d927db09bb90b",
       "articleImageCount": 0,
       "commentCount": 519,
-      "authorReplyCount": 17,
+      "authorReplyCount": 16,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -275,7 +285,7 @@
       "articleSha256": "6a15edbee31e46baa50e8773eafc3f3a83e7a385403a4aa9266687aba8fe6da4",
       "articleImageCount": 0,
       "commentCount": 566,
-      "authorReplyCount": 33,
+      "authorReplyCount": 32,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -287,7 +297,7 @@
       "articleSha256": "981a1a0b44516ed243e13eb03500f197d80d146548c120e23d9b9c6f76c0457a",
       "articleImageCount": 0,
       "commentCount": 681,
-      "authorReplyCount": 24,
+      "authorReplyCount": 23,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -299,7 +309,7 @@
       "articleSha256": "2498838fe4a332026ed89f540db2709684a39cf3bb07af75556774778ad060d2",
       "articleImageCount": 0,
       "commentCount": 538,
-      "authorReplyCount": 23,
+      "authorReplyCount": 22,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -311,7 +321,7 @@
       "articleSha256": "b9ed52bc45a394c586808441f101a52ec4dea6169d4a74648a9a7151fe217ff9",
       "articleImageCount": 0,
       "commentCount": 794,
-      "authorReplyCount": 30,
+      "authorReplyCount": 29,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -323,7 +333,7 @@
       "articleSha256": "2eee6b8ad59c97001315254bfa6a60ae30c6445cb2de3b07c689ebceb9e714ca",
       "articleImageCount": 0,
       "commentCount": 748,
-      "authorReplyCount": 29,
+      "authorReplyCount": 27,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -335,7 +345,7 @@
       "articleSha256": "1c024e10dfabe98297f61c0369c7171500584a288149f4b22d63ee2debca81b1",
       "articleImageCount": 0,
       "commentCount": 691,
-      "authorReplyCount": 41,
+      "authorReplyCount": 40,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -359,7 +369,7 @@
       "articleSha256": "264126941ce9dcdf41b2532724443deb92d7bad483418e1b8171c0f278e2e9f0",
       "articleImageCount": 0,
       "commentCount": 581,
-      "authorReplyCount": 20,
+      "authorReplyCount": 19,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -371,7 +381,7 @@
       "articleSha256": "922c54ed67f7f1a7e173141755201ac5e6136196f2efff0b212ade23f3eca134",
       "articleImageCount": 0,
       "commentCount": 580,
-      "authorReplyCount": 36,
+      "authorReplyCount": 35,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -383,7 +393,7 @@
       "articleSha256": "c870781798393dc1f7ae352c08e4fc3e7602c0ce696167daa813deb07acae979",
       "articleImageCount": 0,
       "commentCount": 674,
-      "authorReplyCount": 27,
+      "authorReplyCount": 26,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -395,7 +405,7 @@
       "articleSha256": "4c3a0294d0c66221f348f013cdb3c004e6c61e401030340475b6db2affebd4ab",
       "articleImageCount": 0,
       "commentCount": 595,
-      "authorReplyCount": 21,
+      "authorReplyCount": 20,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -407,7 +417,7 @@
       "articleSha256": "71db6cb335feb0ad6eb0d1bc8e4ef0b4e88935098874c81406f6160c6501ca09",
       "articleImageCount": 0,
       "commentCount": 524,
-      "authorReplyCount": 4,
+      "authorReplyCount": 3,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -419,7 +429,7 @@
       "articleSha256": "b5af858349473d6cbf37b684cc06f41d012825d8d63a77dcf8bb555b3017036c",
       "articleImageCount": 0,
       "commentCount": 517,
-      "authorReplyCount": 2,
+      "authorReplyCount": 1,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -431,7 +441,7 @@
       "articleSha256": "2ba8d5f4b05c7143c67386654361f756bc554c81f412fe993b92a91168c1b670",
       "articleImageCount": 0,
       "commentCount": 484,
-      "authorReplyCount": 2,
+      "authorReplyCount": 1,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -443,7 +453,7 @@
       "articleSha256": "3661749d36bcbce71009ab4d86e72f2a2f9dd0f440f2b75e9f96041df01f838f",
       "articleImageCount": 0,
       "commentCount": 430,
-      "authorReplyCount": 2,
+      "authorReplyCount": 1,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -455,7 +465,7 @@
       "articleSha256": "fbc59c80193375ab3b26536607bb91b40e955b189ef187244089b7d3c822b0e9",
       "articleImageCount": 0,
       "commentCount": 549,
-      "authorReplyCount": 19,
+      "authorReplyCount": 18,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -467,7 +477,7 @@
       "articleSha256": "08455356556cb64e9476aff55562a34e5d5a186c81fb17983681c6d50437c43d",
       "articleImageCount": 0,
       "commentCount": 499,
-      "authorReplyCount": 13,
+      "authorReplyCount": 11,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -479,7 +489,7 @@
       "articleSha256": "8e66177f3dabb8632b67fb7dfd6d17b2721e6169568f1f00bed78c1777ebf0d9",
       "articleImageCount": 0,
       "commentCount": 628,
-      "authorReplyCount": 17,
+      "authorReplyCount": 16,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -491,7 +501,7 @@
       "articleSha256": "7baa5e79b33e0ede7786899f7a44df19b593f56e957665979a77bdf741b30fd0",
       "articleImageCount": 0,
       "commentCount": 434,
-      "authorReplyCount": 5,
+      "authorReplyCount": 1,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -503,7 +513,7 @@
       "articleSha256": "d55223f2a52787243fad3f92459f517288e025f1b29f25b0447d8604b2346e8f",
       "articleImageCount": 0,
       "commentCount": 584,
-      "authorReplyCount": 31,
+      "authorReplyCount": 30,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -515,7 +525,7 @@
       "articleSha256": "cd16475a8cf2fdb59766358776de02a6e2b011b57275639a1da1358d455703d5",
       "articleImageCount": 0,
       "commentCount": 473,
-      "authorReplyCount": 13,
+      "authorReplyCount": 12,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -527,7 +537,7 @@
       "articleSha256": "b05112bac2d6a3fa834afb01f065628ba388a65a3b6f5fef9cb5ba5730bdc76b",
       "articleImageCount": 0,
       "commentCount": 577,
-      "authorReplyCount": 10,
+      "authorReplyCount": 9,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -539,7 +549,7 @@
       "articleSha256": "7f290da9f42a09b7c19b4d32b6e48d029858ad81645feeb2e006062b7f5180c4",
       "articleImageCount": 0,
       "commentCount": 651,
-      "authorReplyCount": 21,
+      "authorReplyCount": 20,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -563,7 +573,7 @@
       "articleSha256": "826d750a2faac6796089705ca2dbfee339f8d3458b563c5943c5106b752e3b2d",
       "articleImageCount": 2,
       "commentCount": 494,
-      "authorReplyCount": 3,
+      "authorReplyCount": 2,
       "savedImages": [
         "/archive/lessons/47/01.jpeg",
         "/archive/lessons/47/02.gif"
@@ -578,7 +588,7 @@
       "articleSha256": "8eb48022ac9331d2fe6b919017ddb4de7e76005b1ddc420b3539be42947775b1",
       "articleImageCount": 0,
       "commentCount": 600,
-      "authorReplyCount": 24,
+      "authorReplyCount": 23,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -590,7 +600,7 @@
       "articleSha256": "c690ca75d316257af4a5e008de5af6ec4ba812a7213fabc8f8ec3d990344272b",
       "articleImageCount": 0,
       "commentCount": 731,
-      "authorReplyCount": 22,
+      "authorReplyCount": 21,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -602,7 +612,7 @@
       "articleSha256": "fad26d9645963af6d4842a45adde2c6bda23cad0373846d86e96611f98e53056",
       "articleImageCount": 0,
       "commentCount": 570,
-      "authorReplyCount": 3,
+      "authorReplyCount": 2,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -614,7 +624,7 @@
       "articleSha256": "9831dd607827d145a857f5e05cdba2a6d7689edb834f8dc549aae2422d9027f0",
       "articleImageCount": 0,
       "commentCount": 615,
-      "authorReplyCount": 29,
+      "authorReplyCount": 28,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -626,7 +636,7 @@
       "articleSha256": "3b772125d271bccb3648d3aa8defa163b4edbc337ec008526c231fbe9e842218",
       "articleImageCount": 0,
       "commentCount": 773,
-      "authorReplyCount": 24,
+      "authorReplyCount": 22,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -638,7 +648,7 @@
       "articleSha256": "428ad3aae9dd22713757d25b40ea74123d5845ba433d0aa77b8e67f93c21eb1e",
       "articleImageCount": 0,
       "commentCount": 697,
-      "authorReplyCount": 24,
+      "authorReplyCount": 23,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -650,7 +660,7 @@
       "articleSha256": "3dc0b74e8c5f54d52be91436140c46fce8f07fa9c065cf5e66bed6788ffa184a",
       "articleImageCount": 1,
       "commentCount": 814,
-      "authorReplyCount": 14,
+      "authorReplyCount": 13,
       "savedImages": [
         "/archive/lessons/54/01.gif"
       ],
@@ -664,7 +674,7 @@
       "articleSha256": "c5baba98caa9e0bdd8d406d86c5bfcfb66a8fbe95ccac586a2567c122eb559e3",
       "articleImageCount": 0,
       "commentCount": 601,
-      "authorReplyCount": 12,
+      "authorReplyCount": 11,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -676,7 +686,7 @@
       "articleSha256": "7cef6db5e6a7e3fa9fc168c58d8ecb6a4f4993fe5fd2ffe2462f210aa8b5950a",
       "articleImageCount": 1,
       "commentCount": 938,
-      "authorReplyCount": 14,
+      "authorReplyCount": 13,
       "savedImages": [
         "/archive/lessons/56/01.jpeg"
       ],
@@ -690,7 +700,7 @@
       "articleSha256": "51c8bafbd3e3c6ad5cd25723af5e4b509bc6c56c8c3ab982e788bf1dbebd5cf4",
       "articleImageCount": 1,
       "commentCount": 936,
-      "authorReplyCount": 13,
+      "authorReplyCount": 12,
       "savedImages": [
         "/archive/lessons/57/01.jpeg"
       ],
@@ -704,7 +714,7 @@
       "articleSha256": "ef22a890d32b1ab7d7ebf57782d8e06e48567f00eaf8dd7333855492d2eed25a",
       "articleImageCount": 1,
       "commentCount": 1251,
-      "authorReplyCount": 4,
+      "authorReplyCount": 3,
       "savedImages": [
         "/archive/lessons/58/01.jpg"
       ],
@@ -718,7 +728,7 @@
       "articleSha256": "241c68e34bea293435b8da3c49237a48eb8ed9ba32ee9ce57f44c15c72636051",
       "articleImageCount": 3,
       "commentCount": 830,
-      "authorReplyCount": 3,
+      "authorReplyCount": 2,
       "savedImages": [
         "/archive/lessons/59/01.jpeg",
         "/archive/lessons/59/02.jpeg",
@@ -734,7 +744,7 @@
       "articleSha256": "b6ab0cd08c971daabe37bcc3ba1561279c3004bb64dae96fdbf949d814103d65",
       "articleImageCount": 1,
       "commentCount": 749,
-      "authorReplyCount": 4,
+      "authorReplyCount": 3,
       "savedImages": [
         "/archive/lessons/60/01.jpg"
       ],
@@ -748,7 +758,7 @@
       "articleSha256": "c90bdeb2659c23967d88a91e74c9d570370cae1b087256a433489514115d7b87",
       "articleImageCount": 1,
       "commentCount": 929,
-      "authorReplyCount": 4,
+      "authorReplyCount": 2,
       "savedImages": [
         "/archive/lessons/61/01.jpeg"
       ],
@@ -762,7 +772,7 @@
       "articleSha256": "05c8fb82ae04e000f829c5249622bb36339e79e95e95e94058a3d977eaf4ece3",
       "articleImageCount": 1,
       "commentCount": 1011,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [
         "/archive/lessons/62/01.jpeg"
       ],
@@ -776,7 +786,7 @@
       "articleSha256": "2baf6ee28dbbb45a6f682c10ddeadffed47e41343657e5c2340b8a4ffebd1b5f",
       "articleImageCount": 0,
       "commentCount": 526,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -788,7 +798,7 @@
       "articleSha256": "e4b0a05221c2058d4330182ce403bb38a2956a9890bce16308f2f13584f3cf8b",
       "articleImageCount": 1,
       "commentCount": 577,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [
         "/archive/lessons/64/01.jpeg"
       ],
@@ -826,7 +836,7 @@
       "articleSha256": "3b2a448e35974bfa1daeb67de53297c9ff9b4a529d9b51ea33151a8c0121343c",
       "articleImageCount": 1,
       "commentCount": 1429,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [
         "/archive/lessons/67/01.jpeg"
       ],
@@ -840,7 +850,7 @@
       "articleSha256": "c83c5cbb7741d175e5a6f9b6305c9e686161070ec39c38edbad0b290d41818a4",
       "articleImageCount": 0,
       "commentCount": 1138,
-      "authorReplyCount": 3,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -852,7 +862,7 @@
       "articleSha256": "04c859f6a486458208c5ff90e1e984102eb2ca5d26d33548b678e60824314ceb",
       "articleImageCount": 1,
       "commentCount": 970,
-      "authorReplyCount": 3,
+      "authorReplyCount": 1,
       "savedImages": [
         "/archive/lessons/69/01.jpeg"
       ],
@@ -866,7 +876,7 @@
       "articleSha256": "3ff4169a9076d65d32b6500fa32f33c1209096ccd18c5f97b882bc6493f6c35b",
       "articleImageCount": 2,
       "commentCount": 594,
-      "authorReplyCount": 2,
+      "authorReplyCount": 0,
       "savedImages": [
         "/archive/lessons/70/01.jpeg",
         "/archive/lessons/70/02.jpg"
@@ -881,7 +891,7 @@
       "articleSha256": "856fe7e2b7113ef46d5d5e76b0d36a9135e53d3f4ce82fc7b50540781aa1d16a",
       "articleImageCount": 1,
       "commentCount": 364,
-      "authorReplyCount": 7,
+      "authorReplyCount": 0,
       "savedImages": [
         "/archive/lessons/71/01.jpeg"
       ],
@@ -895,7 +905,7 @@
       "articleSha256": "052af0827dec5b3c32710f6f17a2b7fe7904a175a68f4d8689be3e54f68f1a76",
       "articleImageCount": 0,
       "commentCount": 436,
-      "authorReplyCount": 2,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -907,7 +917,7 @@
       "articleSha256": "aa4e479b47a13f80682d9c4f7f637d538e974b26976506505b625547a7e4485c",
       "articleImageCount": 0,
       "commentCount": 721,
-      "authorReplyCount": 2,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -919,7 +929,7 @@
       "articleSha256": "960dffc9119e508538989325fd01429be4330600e63b0d61adb091062d41c87c",
       "articleImageCount": 0,
       "commentCount": 695,
-      "authorReplyCount": 2,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -931,7 +941,7 @@
       "articleSha256": "92b0bfd1ba45b1acdf9f5c47b878b5aa3abd5306ea2ff75faf7b88caa8242430",
       "articleImageCount": 0,
       "commentCount": 790,
-      "authorReplyCount": 3,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -943,7 +953,7 @@
       "articleSha256": "e29db082997b15362b423cf19d4d0b6386190fcab1377d384b21278686fe2990",
       "articleImageCount": 0,
       "commentCount": 655,
-      "authorReplyCount": 3,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -955,7 +965,7 @@
       "articleSha256": "2115cbc8a8c7f282e88401ca1cf43be5f313d59696002d7a48fb5ff65f98b5a3",
       "articleImageCount": 0,
       "commentCount": 810,
-      "authorReplyCount": 3,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -967,7 +977,7 @@
       "articleSha256": "b93113c040c067b94ba28f2c34a7d50739af1ac53e4e981022d3fc1894b86fb5",
       "articleImageCount": 0,
       "commentCount": 745,
-      "authorReplyCount": 3,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -979,7 +989,7 @@
       "articleSha256": "c52927f19296a11b1733aff14a80bbe0f06aae08604c0a9ad97a87032829afc4",
       "articleImageCount": 0,
       "commentCount": 892,
-      "authorReplyCount": 4,
+      "authorReplyCount": 1,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -991,7 +1001,7 @@
       "articleSha256": "c7c00a63d94aea73a741137b04c670bae27b6cff5938e4d12c3b1bb9545e676c",
       "articleImageCount": 0,
       "commentCount": 946,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1003,7 +1013,7 @@
       "articleSha256": "62f4468a910079769c84b12d270d6139b5ad91a28dc8e5fcab600e7571d05876",
       "articleImageCount": 0,
       "commentCount": 765,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1015,7 +1025,7 @@
       "articleSha256": "13cea2295dd705c285f23f7efee06db84481f38d2fe70d7324d48807bf40457d",
       "articleImageCount": 0,
       "commentCount": 767,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1027,7 +1037,7 @@
       "articleSha256": "a9bd4c0bc1fe6bf059793eaa387a6bb1d429d8b733effc220d845180277796b7",
       "articleImageCount": 0,
       "commentCount": 862,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1039,7 +1049,7 @@
       "articleSha256": "e4a33396cda55a7b7fe04b2cc314fa525c497d4836a8f0024a83caf47799d51c",
       "articleImageCount": 0,
       "commentCount": 746,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1051,7 +1061,7 @@
       "articleSha256": "9ba2a8895bc3992d980498d4cee6c60bf80daa0c8f61ef0454396dd7448a646f",
       "articleImageCount": 0,
       "commentCount": 805,
-      "authorReplyCount": 3,
+      "authorReplyCount": 2,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1063,7 +1073,7 @@
       "articleSha256": "c1a912b8824e856d04cd7e435636038f6a9e2c241729d52796306e4ca40072c3",
       "articleImageCount": 0,
       "commentCount": 952,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1075,7 +1085,7 @@
       "articleSha256": "c415ed9f31b7ee7f555e6f7f9f928b19c1adc5a69db53f853eb04022047bdff9",
       "articleImageCount": 0,
       "commentCount": 561,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1087,7 +1097,7 @@
       "articleSha256": "fd27d0de0dc85a7f6c8dfc831513090112ce6d0f6ce49e7c56591a02dd68d771",
       "articleImageCount": 1,
       "commentCount": 513,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [
         "/archive/lessons/88/01.jpeg"
       ],
@@ -1101,7 +1111,7 @@
       "articleSha256": "5775519eeab4531fe2f7b4a7883578953b8d6c138daf24a086883abce19f5c88",
       "articleImageCount": 0,
       "commentCount": 578,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1113,7 +1123,7 @@
       "articleSha256": "4871c6a979cdb423532ef0707fdb121a5721f5cbacd37c955b86aefd30c26ada",
       "articleImageCount": 1,
       "commentCount": 610,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [
         "/archive/lessons/90/01.jpg"
       ],
@@ -1127,7 +1137,7 @@
       "articleSha256": "6f9cdbcdbc41340c435a408a77071f97a364ad28d63d065aab580e9ff668eb6b",
       "articleImageCount": 0,
       "commentCount": 662,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1139,7 +1149,7 @@
       "articleSha256": "fca97be902c40ce85d352d9008f1493a9eb76e20d69d52261883aeb12df0912b",
       "articleImageCount": 0,
       "commentCount": 565,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1151,7 +1161,7 @@
       "articleSha256": "34f454912e372b954d828f42690504f4314f0764d22a2b3090fa992d04e6b1a6",
       "articleImageCount": 0,
       "commentCount": 583,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1163,7 +1173,7 @@
       "articleSha256": "84e7e5daa406a659ab8222fb8b058ab0e93ea0212813dfd922358102c571b476",
       "articleImageCount": 0,
       "commentCount": 956,
-      "authorReplyCount": 4,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1175,7 +1185,7 @@
       "articleSha256": "9d0647b25b0d7196bfb4251d53858eb6fd7ce37a9154e74941d377c2113974de",
       "articleImageCount": 0,
       "commentCount": 929,
-      "authorReplyCount": 6,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1187,7 +1197,7 @@
       "articleSha256": "3efca74db7b61597dab316f0f7959cb7464a52a8ce888ea7d194b0d7bf2f3e17",
       "articleImageCount": 0,
       "commentCount": 932,
-      "authorReplyCount": 7,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1199,7 +1209,7 @@
       "articleSha256": "f3a88b64429abd55e9a884c1a6efb681f8dd9bd1acff8c4a97a195805a36bd28",
       "articleImageCount": 0,
       "commentCount": 690,
-      "authorReplyCount": 17,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1211,7 +1221,7 @@
       "articleSha256": "5479611e1872bcc7c6aaa5c67798b7cb1dc476007ddd49e1becdecf688e52675",
       "articleImageCount": 1,
       "commentCount": 571,
-      "authorReplyCount": 16,
+      "authorReplyCount": 0,
       "savedImages": [
         "/archive/lessons/98/01.jpg"
       ],
@@ -1225,7 +1235,7 @@
       "articleSha256": "4b0e1404e03ca748662275f7a17eb8f97b8e7141a0ae4d7edb340ac7d3f68d86",
       "articleImageCount": 0,
       "commentCount": 567,
-      "authorReplyCount": 20,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1237,7 +1247,7 @@
       "articleSha256": "ce7a7623bcd688eb18436a58c992568039bc7c584afbb74d42cf0a7be27528ac",
       "articleImageCount": 0,
       "commentCount": 557,
-      "authorReplyCount": 10,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1249,7 +1259,7 @@
       "articleSha256": "a30287e4e717198c1510013aeac11e1d76e48a7d7c63bbd04f359cc35d989124",
       "articleImageCount": 0,
       "commentCount": 836,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1261,7 +1271,7 @@
       "articleSha256": "625e6785b92a56e3985a45917813cf73598df54ff50aadea8c3c3716a1086ee2",
       "articleImageCount": 0,
       "commentCount": 712,
-      "authorReplyCount": 3,
+      "authorReplyCount": 2,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1273,7 +1283,7 @@
       "articleSha256": "835f38f588ed01d9f7dccb962ffd5cebef699c64bcaa03ff46e97567121cedf3",
       "articleImageCount": 0,
       "commentCount": 726,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1285,7 +1295,7 @@
       "articleSha256": "a675c557f875272d36b9115f206ef7bd23b1d3a0eb84305942b8b1478e06018d",
       "articleImageCount": 0,
       "commentCount": 916,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1297,7 +1307,7 @@
       "articleSha256": "3ba9aefc0f3a98a97bc44c1ff4cedea97fa017def7687ffb35cec5fdc97f0dc0",
       "articleImageCount": 0,
       "commentCount": 670,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1309,7 +1319,7 @@
       "articleSha256": "73103f3c226ce6da5fddb85248d0d3b888d6fc9ac6bbce2e3e876c1b056350f8",
       "articleImageCount": 0,
       "commentCount": 895,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1321,7 +1331,7 @@
       "articleSha256": "cf57bb1b670902fcf29989e4eb364bca16e76250651e7a8738fa4893ec2809f0",
       "articleImageCount": 0,
       "commentCount": 854,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     },
@@ -1333,7 +1343,7 @@
       "articleSha256": "1161ad2c0480f982cd880d2c155f1e7af81798864f9b0447db4a4ae4021ecdd4",
       "articleImageCount": 0,
       "commentCount": 970,
-      "authorReplyCount": 1,
+      "authorReplyCount": 0,
       "savedImages": [],
       "archiveStatus": "正文存档已核验"
     }

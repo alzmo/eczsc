@@ -15,13 +15,13 @@ export default function Home() {
           <p className="eyebrow">从原文出发 · 让定义可查 · 让规则可证</p>
           <h1>先找到出处，<br />再讨论走势。</h1>
           <p className="lede">以《教你炒股票》108课为主线，把课程、作者回复、更正与本站整理分层呈现。这里不是另造一套缠论，而是为每个概念保留来路。</p>
-          <div className="hero-actions"><a className="primary" href="/courses">浏览完整108课</a><a className="secondary" href="/topics">按概念研读</a></div>
+          <div className="hero-actions"><a className="primary" href="/courses">浏览完整108课</a><a className="secondary" href="/replies">检索作者回复</a></div>
         </div>
         <aside className="principle-card"><span>资料原则 · 01</span><p>原文不是装饰，<br />而是判断的边界。</p><div className="ink-line" /><small>原文、作者回复、正式更正与本站释义，四层分开标记。</small></aside>
       </section>
 
       <section className="evidence-strip" aria-label="本站资料规模">
-        <div><strong>{archiveSummary.lessonCoverage}</strong><span>课程正文存档核验</span></div><div><strong>{archiveSummary.authorReplies.toLocaleString("zh-CN")}</strong><span>作者署名回复线索</span></div><div><strong>{archiveSummary.images}</strong><span>核验后保留的原始图解</span></div>
+        <div><strong>{archiveSummary.lessonCoverage}</strong><span>课程正文存档核验</span></div><div><strong>{archiveSummary.authorReplies.toLocaleString("zh-CN")}</strong><span>双重确认作者回复</span></div><div><strong>{archiveSummary.images}</strong><span>核验后保留的原始图解</span></div>
       </section>
 
       <section className="topic-section">

@@ -29,6 +29,12 @@ from lxml import html
 LESSON_TITLE = re.compile(r"^教你炒股票\s*(\d{1,3})\s*[：:]")
 ARTICLE_CLASS = " articalContent "
 REPLY_CLASS_FRAGMENT = "divReplyIsHost"
+AUTHOR_REPLY_CLASS = "divReplyIsHostTrue"
+AUTHOR_NAME = "缠中说禅"
+CORRECTION_TITLE = "各位注意，严重更正"
+TECHNICAL_REPLY_PATTERN = re.compile(
+    r"分型|线段|中枢|背驰|背弛|走势|级别|买卖点|买点|卖点|复权|均线|MACD|盘整|趋势|笔"
+)
 ALLOWED_IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".webp"}
 # In this saved archive, lessons 1–22 contain finance widgets rendered in 2014,
 # years after the original posts. Visual inspection confirmed they are saved
@@ -61,6 +67,22 @@ def decode_html(data: bytes) -> str:
 
 def normalized_text(element) -> str:
     return re.sub(r"\s+", " ", element.text_content()).strip()
+
+
+def clipped(text: str, limit: int) -> str:
+    return text if len(text) <= limit else text[:limit].rstrip() + "…"
+
+
+def reply_body(reply) -> str:
+    containers = reply.xpath("./fieldset/div")
+    return normalized_text(containers[-1]) if containers else normalized_text(reply)
+
+
+def reply_excerpts(text: str) -> tuple[str, str]:
+    parts = re.split(r"\s*(?:={3,}|-{5,}|_{3,})\s*", text)
+    if len(parts) > 1:
+        return clipped(parts[-2], 160), clipped(parts[-1], 240)
+    return "", clipped(text, 240)
 
 
 def class_xpath(class_name: str) -> str:
@@ -106,6 +128,7 @@ def main() -> int:
     args = parse_args()
     project_root = args.project_root.resolve()
     output_json = project_root / "app" / "data" / "archive-records.json"
+    reply_output_json = project_root / "app" / "data" / "author-replies.json"
     image_root = project_root / "public" / "archive" / "lessons"
     if not args.dry_run and image_root.exists():
         resolved_image_root = image_root.resolve()
@@ -117,6 +140,8 @@ def main() -> int:
     total_image_bytes = 0
     total_author_replies = 0
     total_comments = 0
+    author_reply_records: list[dict] = []
+    correction_record: dict | None = None
 
     with zipfile.ZipFile(args.zip_path) as archive:
         infos = archive.infolist()
@@ -158,12 +183,33 @@ def main() -> int:
             archived_publication_time = normalized_text(publication_nodes[0]) if publication_nodes else ""
 
             replies = document.xpath(f"//*[contains(@class, '{REPLY_CLASS_FRAGMENT}')]")
-            author_reply_count = 0
+            lesson_author_replies: list[dict] = []
             for reply in replies:
+                class_tokens = (reply.get("class") or "").split()
                 authors = reply.xpath(".//*[contains(concat(' ', normalize-space(@class), ' '), ' author ')]")
                 author = normalized_text(authors[0]) if authors else ""
-                if "缠中说禅" in author:
-                    author_reply_count += 1
+                if AUTHOR_REPLY_CLASS not in class_tokens or author != AUTHOR_NAME:
+                    continue
+                publication = reply.xpath(".//*[contains(concat(' ', normalize-space(@class), ' '), ' pubtime ')]")
+                published_at = normalized_text(publication[0]) if publication else ""
+                body = reply_body(reply)
+                question_excerpt, answer_excerpt = reply_excerpts(body)
+                sequence = len(lesson_author_replies) + 1
+                lesson_author_replies.append({
+                    "id": f"{lesson_id}-{sequence}",
+                    "lessonId": lesson_id,
+                    "sequence": sequence,
+                    "publishedAt": published_at,
+                    "questionExcerpt": question_excerpt,
+                    "answerExcerpt": answer_excerpt,
+                    "replyCharacterCount": len(body),
+                    "replySha256": hashlib.sha256(body.encode("utf-8")).hexdigest(),
+                    "isTechnical": bool(TECHNICAL_REPLY_PATTERN.search(body)),
+                    "verification": "存档博主标记与作者名双重确认",
+                })
+
+            author_reply_count = len(lesson_author_replies)
+            author_reply_records.extend(lesson_author_replies)
 
             saved_images: list[str] = []
             seen_hashes: set[str] = set()
@@ -206,10 +252,33 @@ def main() -> int:
                 "archiveStatus": "正文存档已核验",
             })
 
+        correction_info = next((
+            info for info in infos
+            if not info.is_dir()
+            and info.filename.lower().endswith(".html")
+            and posixpath.basename(decode_entry_name(info)).rsplit(".", 1)[0] == CORRECTION_TITLE
+        ), None)
+        if correction_info is not None:
+            correction_document = html.fromstring(decode_html(archive.read(correction_info)))
+            correction_bodies = correction_document.xpath(class_xpath("articalContent"))
+            if len(correction_bodies) != 1:
+                raise RuntimeError(f"Correction page has {len(correction_bodies)} article bodies")
+            correction_text = normalized_text(correction_bodies[0])
+            correction_times = correction_document.xpath(class_xpath("pubtime"))
+            correction_record = {
+                "title": CORRECTION_TITLE,
+                "archivedPublicationTime": normalized_text(correction_times[0]) if correction_times else "",
+                "articleCharacterCount": len(correction_text),
+                "articleSha256": hashlib.sha256(correction_text.encode("utf-8")).hexdigest(),
+                "excerpt": clipped(correction_text, 280),
+                "archiveStatus": "正式更正文已核验",
+            }
+
     payload = {
         "schemaVersion": 1,
         "sourceDescription": "用户提供的公开共享存档合集（已剥离转载站页面外壳）",
         "lessonCoverage": "108/108",
+        "corrections": [correction_record] if correction_record else [],
         "records": records,
     }
     if not args.dry_run:
@@ -217,6 +286,14 @@ def main() -> int:
         temporary = output_json.with_suffix(".json.tmp")
         temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         os.replace(temporary, output_json)
+        reply_payload = {
+            "schemaVersion": 1,
+            "verificationRule": "仅收录divReplyIsHostTrue且作者名完全等于缠中说禅的回复",
+            "records": author_reply_records,
+        }
+        reply_temporary = reply_output_json.with_suffix(".json.tmp")
+        reply_temporary.write_text(json.dumps(reply_payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        os.replace(reply_temporary, reply_output_json)
 
     summary = {
         "lessonCoverage": payload["lessonCoverage"],
@@ -224,6 +301,8 @@ def main() -> int:
         "articleImageBytes": total_image_bytes,
         "comments": total_comments,
         "authorReplies": total_author_replies,
+        "technicalAuthorReplies": sum(reply["isTechnical"] for reply in author_reply_records),
+        "verifiedCorrections": len(payload["corrections"]),
         "dryRun": args.dry_run,
     }
     print(json.dumps(summary, ensure_ascii=False, indent=2))

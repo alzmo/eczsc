@@ -9,6 +9,7 @@ export function SiteHeader() {
       <nav aria-label="主导航">
         <a href="/courses">108课</a>
         <a href="/archive">存档核验</a>
+        <a href="/replies">作者回复</a>
         <a href="/topics">专题索引</a>
         <a href="/corrections">更正与版本</a>
         <a href="/about">本站方法</a>

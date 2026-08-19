@@ -5,6 +5,7 @@ import { SiteFooter } from "../../components/SiteFooter";
 import { SiteHeader } from "../../components/SiteHeader";
 import { getArchiveRecord } from "../../data/archive";
 import { archiveMirrorSource, formatLessonNumber, getChapter, getLesson, getLessonTags, lessons, originalBlogSource } from "../../data/lessons";
+import { getRepliesForLesson } from "../../data/replies";
 
 type PageProps = { params: Promise<{ id: string }> };
 
@@ -37,6 +38,8 @@ export default async function LessonPage({ params }: PageProps) {
   const next = getLesson(lesson.id + 1);
   const tags = getLessonTags(lesson);
   const archive = getArchiveRecord(lesson.id);
+  const replies = getRepliesForLesson(lesson.id);
+  const replyPreview = [...replies].sort((a, b) => Number(b.isTechnical) - Number(a.isTechnical)).slice(0, 3);
 
   return (
     <main className="inner-page lesson-page">
@@ -69,10 +72,12 @@ export default async function LessonPage({ params }: PageProps) {
 
         {archive && <section className="archive-evidence">
           <header><div><p className="eyebrow">Local archive evidence</p><h2>本地存档核验</h2></div><p>已从公开共享档案中剥离转载站导航、广告、脚本和后期动态组件，仅保留可核查的课程证据。</p></header>
-          <div className="archive-evidence-stats"><article><strong>已保存</strong><span>课程正文</span></article><article><strong>{archive.archivedPublicationTime}</strong><span>存档发表时间</span></article><article><strong>{archive.commentCount.toLocaleString("zh-CN")}</strong><span>讨论记录</span></article><article><strong>{archive.authorReplyCount.toLocaleString("zh-CN")}</strong><span>作者署名回复</span></article></div>
+          <div className="archive-evidence-stats"><article><strong>已保存</strong><span>课程正文</span></article><article><strong>{archive.archivedPublicationTime}</strong><span>存档发表时间</span></article><article><strong>{archive.commentCount.toLocaleString("zh-CN")}</strong><span>讨论记录</span></article><article><strong>{archive.authorReplyCount.toLocaleString("zh-CN")}</strong><span>双重确认作者回复</span></article></div>
           <p className="archive-fingerprint">正文校验指纹：<code>{archive.articleSha256.slice(0, 16)}…</code> · {archive.articleCharacterCount.toLocaleString("zh-CN")} 个正文字符</p>
           {archive.savedImages.length > 0 && <div className="archive-gallery"><h3>存档恢复的原始配图</h3>{archive.savedImages.map((image, index) => <figure key={image}><img src={image} alt={`第${lesson.id}课存档原始配图 ${index + 1}`} loading="lazy" /><figcaption>第 {lesson.id} 课 · 图 {index + 1} · 来源于正文存档</figcaption></figure>)}</div>}
         </section>}
+
+        {replyPreview.length > 0 && <section className="lesson-replies"><header><div><p className="eyebrow">Verified author replies</p><h2>本课作者回复</h2></div><p>本课共确认 {replies.length} 条作者回复，以下优先展示含技术关键词的节录。</p></header><div>{replyPreview.map((reply) => <article key={reply.id}><time>{reply.publishedAt}</time>{reply.questionExcerpt && <p className="reply-context">上下文：{reply.questionExcerpt}</p>}<p>{reply.answerExcerpt}</p><small>{reply.isTechnical ? "技术相关" : "一般回复"} · 指纹 {reply.replySha256.slice(0, 12)}…</small></article>)}</div><a className="reply-more" href={`/replies?lesson=${lesson.id}`}>查看本课全部 {replies.length} 条回复 →</a></section>}
 
         <section className="layer-guide">
           <p className="eyebrow">Evidence layers</p>

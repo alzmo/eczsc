@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
+import { archiveCorrections } from "../data/archive";
 import { archiveMirrorSource } from "../data/lessons";
 
 export const metadata: Metadata = { title: "更正与版本｜缠论原典", description: "记录作者正式更正、补充限定、版本差异和本站整理状态。" };
@@ -11,4 +12,6 @@ const records = [
   { date: "整理中", kind: "版本核验", title: "新浪原博客、完整镜像与转载版本差异", note: "新浪博客作为原始出处；镜像仅用于补充已删除文章、缺失图片和失效页面。只有能够保存来源、时间与差异内容时才登记。", lesson: null },
 ];
 
-export default function Corrections(){return <main className="inner-page"><SiteHeader /><section className="page-intro split-intro"><div><p className="eyebrow">Corrections & versions</p><h1>更正与版本</h1></div><p>这里不追求一个漂亮但未经核验的数字。每条更正必须能回答：谁更正、何时更正、更正了什么、它影响哪些早期表述。</p></section><section className="correction-list">{records.map(record=><article key={record.title}><div><time>{record.date}</time><span>{record.kind}</span></div><div><h2>{record.title}</h2><p>{record.note}</p>{record.lesson ? <a href={`/courses/${record.lesson}`}>查看关联课程 →</a> : <a href={archiveMirrorSource} target="_blank" rel="noreferrer">前往完整镜像核对 ↗</a>}</div></article>)}</section><aside className="verification-note"><strong>核验规则</strong><p>“正式更正”只用于作者明确否定或替换早期表述；“补充限定”用于增加适用条件；“版本差异”只描述文本或配图差别；本站推论永远单独标注。</p></aside><SiteFooter /></main>}
+const verifiedCorrection = archiveCorrections[0];
+
+export default function Corrections(){return <main className="inner-page"><SiteHeader /><section className="page-intro split-intro"><div><p className="eyebrow">Corrections & versions</p><h1>更正与版本</h1></div><p>这里不追求一个漂亮但未经核验的数字。每条更正必须能回答：谁更正、何时更正、更正了什么、它影响哪些早期表述。</p></section>{verifiedCorrection && <section className="verified-correction"><div><p className="eyebrow">Archive verified</p><h2>{verifiedCorrection.title}</h2><time>{verifiedCorrection.archivedPublicationTime}</time></div><div><p>{verifiedCorrection.excerpt}</p><small>{verifiedCorrection.archiveStatus} · 正文 {verifiedCorrection.articleCharacterCount.toLocaleString("zh-CN")} 字 · 指纹 <code>{verifiedCorrection.articleSha256.slice(0, 16)}…</code></small></div></section>}<section className="correction-list">{records.map(record=><article key={record.title}><div><time>{record.date}</time><span>{record.kind}</span></div><div><h2>{record.title}</h2><p>{record.note}</p>{record.lesson ? <a href={`/courses/${record.lesson}`}>查看关联课程 →</a> : <a href={archiveMirrorSource} target="_blank" rel="noreferrer">前往完整镜像核对 ↗</a>}</div></article>)}</section><aside className="verification-note"><strong>核验规则</strong><p>“正式更正”只用于作者明确否定或替换早期表述；“补充限定”用于增加适用条件；“版本差异”只描述文本或配图差别；本站推论永远单独标注。</p></aside><SiteFooter /></main>}

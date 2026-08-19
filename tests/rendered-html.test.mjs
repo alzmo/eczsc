@@ -23,7 +23,8 @@ test("首页呈现真实资料规模和主要入口", async () => {
   assert.match(html, /完整108课/);
   assert.match(html, /专题索引/);
   assert.match(html, /108\/108/);
-  assert.match(html, /1,165/);
+  assert.match(html, /963/);
+  assert.match(html, /检索作者回复/);
   assert.doesNotMatch(html, /968|116条/);
 });
 
@@ -41,6 +42,9 @@ test("关键课程具有独立可访问页面", async () => {
   const lesson108 = await htmlAt("/courses/108");
   assert.match(lesson108, /何谓底部/);
   assert.doesNotMatch(lesson108, /property="og:image"/);
+  const lesson10 = await htmlAt("/courses/10");
+  assert.match(lesson10, /本课作者回复/);
+  assert.match(lesson10, /本课共确认[\s\S]{0,50}41[\s\S]{0,50}条作者回复/);
 });
 
 test("目录与专题页可服务端呈现", async () => {
@@ -58,8 +62,26 @@ test("存档核验页呈现清洗结果和证据规模", async () => {
   assert.match(archive, /存档核验/);
   assert.match(archive, /108\/108/);
   assert.match(archive, /75,349/);
-  assert.match(archive, /1,165/);
+  assert.match(archive, /963/);
   assert.match(archive, /清理的是网站外壳，不是资料来路/);
+});
+
+test("作者回复以双重标记核验并支持服务端检索", async () => {
+  const replies = await htmlAt("/replies");
+  assert.match(replies, /963/);
+  assert.match(replies, /518/);
+  assert.match(replies, /为什么从1,165修正为963/);
+  const filtered = await htmlAt(`/replies?q=${encodeURIComponent("复权")}`);
+  assert.match(filtered, /打倒夫权/);
+  assert.match(filtered, /href="\/courses\/10"/);
+});
+
+test("正式更正文已有本地存档证据", async () => {
+  const corrections = await htmlAt("/corrections");
+  assert.match(corrections, /各位注意，严重更正/);
+  assert.match(corrections, /2007\/9\/13 20:55:15/);
+  assert.match(corrections, /正式更正文已核验/);
+  assert.match(corrections, /一段是至少三笔的/);
 });
 
 test("课程筛选和搜索不依赖浏览器脚本", async () => {
