@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- native navigation keeps the archive usable without client JavaScript */
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
+import { archiveSummary } from "./data/archive";
 import { chapters, lessons } from "./data/lessons";
 
 const featured = [17, 20, 62, 67, 81, 91].map((id) => lessons[id - 1]);
@@ -20,7 +21,7 @@ export default function Home() {
       </section>
 
       <section className="evidence-strip" aria-label="本站资料规模">
-        <div><strong>108</strong><span>篇课程完整索引</span></div><div><strong>6</strong><span>个连续研读阶段</span></div><div><strong>4</strong><span>种证据层级</span></div>
+        <div><strong>{archiveSummary.lessonCoverage}</strong><span>课程正文存档核验</span></div><div><strong>{archiveSummary.authorReplies.toLocaleString("zh-CN")}</strong><span>作者署名回复线索</span></div><div><strong>{archiveSummary.images}</strong><span>核验后保留的原始图解</span></div>
       </section>
 
       <section className="topic-section">

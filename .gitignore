@@ -39,6 +39,7 @@ yarn-error.log*
 /tsconfig.tsbuildinfo
 /outputs/
 /work/
+/site-bundle.tar.gz
 
 # Local Sites project binding; never publish internal project metadata.
 /.openai/hosting.json

@@ -22,6 +22,8 @@ test("首页呈现真实资料规模和主要入口", async () => {
   assert.match(html, /缠论原典/);
   assert.match(html, /完整108课/);
   assert.match(html, /专题索引/);
+  assert.match(html, /108\/108/);
+  assert.match(html, /1,165/);
   assert.doesNotMatch(html, /968|116条/);
 });
 
@@ -33,18 +35,31 @@ test("关键课程具有独立可访问页面", async () => {
   assert.match(lesson62, /<title>第62课：分型、笔与线段｜缠论原典<\/title>/);
   assert.match(lesson62, /https:\/\/blog\.sina\.com\.cn\/chzhshch/);
   assert.match(lesson62, /查看完整镜像/);
-  assert.doesNotMatch(lesson62, /property="og:image"/);
+  assert.match(lesson62, /本地存档核验/);
+  assert.match(lesson62, /\/archive\/lessons\/62\/01\.jpeg/);
+  assert.match(lesson62, /property="og:image" content="https:\/\/eczsc\.com\/archive\/lessons\/62\/01\.jpeg"/);
   const lesson108 = await htmlAt("/courses/108");
   assert.match(lesson108, /何谓底部/);
+  assert.doesNotMatch(lesson108, /property="og:image"/);
 });
 
 test("目录与专题页可服务端呈现", async () => {
   const courses = await htmlAt("/courses");
   assert.match(courses, /全部 108 篇/);
-  assert.match(courses, /完整目录已经建立/);
+  assert.match(courses, /完整目录与本地存档均已核验/);
   assert.match(courses, /访问作者原博客/);
+  assert.match(courses, /查看存档核验/);
   const topics = await htmlAt("/topics");
   assert.match(topics, /多级别与当下/);
+});
+
+test("存档核验页呈现清洗结果和证据规模", async () => {
+  const archive = await htmlAt("/archive");
+  assert.match(archive, /存档核验/);
+  assert.match(archive, /108\/108/);
+  assert.match(archive, /75,349/);
+  assert.match(archive, /1,165/);
+  assert.match(archive, /清理的是网站外壳，不是资料来路/);
 });
 
 test("课程筛选和搜索不依赖浏览器脚本", async () => {

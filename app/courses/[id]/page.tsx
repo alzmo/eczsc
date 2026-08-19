@@ -1,8 +1,9 @@
-/* eslint-disable @next/next/no-html-link-for-pages -- native navigation keeps the archive usable without client JavaScript */
+/* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element -- native navigation and archived source images remain usable without client JavaScript */
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "../../components/SiteFooter";
 import { SiteHeader } from "../../components/SiteHeader";
+import { getArchiveRecord } from "../../data/archive";
 import { archiveMirrorSource, formatLessonNumber, getChapter, getLesson, getLessonTags, lessons, originalBlogSource } from "../../data/lessons";
 
 type PageProps = { params: Promise<{ id: string }> };
@@ -15,13 +16,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { id } = await params;
   const lesson = getLesson(Number(id));
   if (!lesson) return {};
+  const archive = getArchiveRecord(lesson.id);
   const title = `第${lesson.id}课：${lesson.title}｜缠论原典`;
-  const description = `${lesson.date}发表。《教你炒股票》第${lesson.id}课的出处、专题定位与研读提示。`;
+  const description = `${lesson.date}发表。《教你炒股票》第${lesson.id}课的出处、存档核验、专题定位与研读提示。`;
+  const primaryImage = archive?.savedImages[0] ? new URL(archive.savedImages[0], "https://eczsc.com").toString() : null;
   return {
     title,
     description,
-    openGraph: { title, description, images: [] },
-    twitter: { title, description, images: [] },
+    openGraph: { title, description, images: primaryImage ? [{ url: primaryImage, alt: `第${lesson.id}课原始配图` }] : [] },
+    twitter: { title, description, images: primaryImage ? [primaryImage] : [] },
   };
 }
 
@@ -33,6 +36,7 @@ export default async function LessonPage({ params }: PageProps) {
   const previous = getLesson(lesson.id - 1);
   const next = getLesson(lesson.id + 1);
   const tags = getLessonTags(lesson);
+  const archive = getArchiveRecord(lesson.id);
 
   return (
     <main className="inner-page lesson-page">
@@ -62,6 +66,13 @@ export default async function LessonPage({ params }: PageProps) {
             <div className="source-links"><a href={originalBlogSource} target="_blank" rel="noreferrer">访问作者原博客 ↗</a><a href={archiveMirrorSource} target="_blank" rel="noreferrer">查看完整镜像 ↗</a></div>
           </aside>
         </div>
+
+        {archive && <section className="archive-evidence">
+          <header><div><p className="eyebrow">Local archive evidence</p><h2>本地存档核验</h2></div><p>已从公开共享档案中剥离转载站导航、广告、脚本和后期动态组件，仅保留可核查的课程证据。</p></header>
+          <div className="archive-evidence-stats"><article><strong>已保存</strong><span>课程正文</span></article><article><strong>{archive.archivedPublicationTime}</strong><span>存档发表时间</span></article><article><strong>{archive.commentCount.toLocaleString("zh-CN")}</strong><span>讨论记录</span></article><article><strong>{archive.authorReplyCount.toLocaleString("zh-CN")}</strong><span>作者署名回复</span></article></div>
+          <p className="archive-fingerprint">正文校验指纹：<code>{archive.articleSha256.slice(0, 16)}…</code> · {archive.articleCharacterCount.toLocaleString("zh-CN")} 个正文字符</p>
+          {archive.savedImages.length > 0 && <div className="archive-gallery"><h3>存档恢复的原始配图</h3>{archive.savedImages.map((image, index) => <figure key={image}><img src={image} alt={`第${lesson.id}课存档原始配图 ${index + 1}`} loading="lazy" /><figcaption>第 {lesson.id} 课 · 图 {index + 1} · 来源于正文存档</figcaption></figure>)}</div>}
+        </section>}
 
         <section className="layer-guide">
           <p className="eyebrow">Evidence layers</p>

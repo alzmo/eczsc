@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
+import { archiveSummary } from "../data/archive";
 import { archiveMirrorSource, chapters, formatLessonNumber, getChapter, getLessonTags, lessons, originalBlogSource } from "../data/lessons";
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ export default async function Courses({ searchParams }: PageProps) {
       <SiteHeader />
       <section className="page-intro course-intro">
         <div><p className="eyebrow">108 lessons · 2006—2008</p><h1>《教你炒股票》</h1></div>
-        <div className="intro-note"><strong>完整目录已经建立</strong><p>标题与发表日期按原始顺序核验。原始出处为缠中说禅新浪博客；新浪已删除或缺失的内容，可通过完整镜像辅助核对。</p><div className="source-links"><a href={originalBlogSource} target="_blank" rel="noreferrer">访问作者原博客 ↗</a><a href={archiveMirrorSource} target="_blank" rel="noreferrer">查看完整镜像 ↗</a></div></div>
+        <div className="intro-note"><strong>完整目录与本地存档均已核验</strong><p>108课正文覆盖 {archiveSummary.lessonCoverage}，并从公开共享存档中恢复 {archiveSummary.images} 张原始图解。原始出处为缠中说禅新浪博客；新浪已删除或缺失的内容，可通过完整镜像辅助核对。</p><div className="source-links"><a href="/archive">查看存档核验 →</a><a href={originalBlogSource} target="_blank" rel="noreferrer">访问作者原博客 ↗</a><a href={archiveMirrorSource} target="_blank" rel="noreferrer">查看完整镜像 ↗</a></div></div>
       </section>
       <section className="course-tools" aria-label="课程检索">
         <form action="/courses" method="get">
